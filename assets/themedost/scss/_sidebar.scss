@@ -1,0 +1,19 @@
+.sidebar {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.span4 {
+  .sidebar {
+    .content {
+      section {
+        margin-bottom: 20px;
+        .header{
+            font-weight: 700;
+            color: $title_text;
+            padding: 10px 0px;
+        }
+      }
+    }
+  }
+}

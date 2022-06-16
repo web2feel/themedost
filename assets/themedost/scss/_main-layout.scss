@@ -1,0 +1,110 @@
+body {
+  background: $background_bg;
+  padding: 10px 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: $body_text;
+  line-height: 1.4;
+}
+
+#container {
+  background: $content_bg;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  @include rounded_shadow;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  .top-menu {
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row-reverse;
+    font-size: 14px;
+    p {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+  .head {
+    padding: 20px 0px;
+    #logo {
+      max-width: 260px;
+      float: left;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.sub-menu {
+  background: $background_bg;
+  border-radius: 5px;
+  padding: 0px 20px;
+  #nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    list-style: none;
+    li {
+      padding: 15px 0px;
+      font-weight: 500;
+      a {
+        color: $body_text;
+      }
+      a.active,
+      a:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+
+
+#content {
+  padding: 20px 0;
+  margin: 0 20px;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  align-items: center;
+  padding: 30px 0px;
+  gap: 5px;
+  #poweredBy {
+    width: 120px;
+    height: 30px;
+    display: block;
+    outline: none;
+    text-indent: -9999px;
+    margin: 0 auto;
+    background: url("../images/poweredby.png") no-repeat;
+    background-size: contain;
+  }
+}
+
+
+@media only screen and (max-width: 760px) {
+  .sub-menu{
+    #nav{
+      flex-direction: column;
+      gap:5px;
+      padding:10px 0px;
+      align-items: center;
+      li{
+        padding:0px 0px;
+      }
+    }
+  }
+}

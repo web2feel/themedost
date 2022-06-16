@@ -1,0 +1,227 @@
+// Variables
+
+$background_bg : #F4F6FD;
+$content_bg : #ffffff;
+$title_text : #001845;
+$body_text:#5c677d;
+$border_color:#ced2e1;
+$primary:#274690;
+$blue:#00a6fb;
+$green:#2ec4b6;
+$red:#e71d36;
+$yellow:#ff9f1c;
+
+@mixin rounded_shadow{
+ border-radius: 5px;
+ box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+@mixin rounded_border{
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid $border_color;
+ }
+
+/* Typography */
+a:link, a:visited {
+  color: $blue;
+  text-decoration: none;
+}
+
+a:hover{
+  color: rgba($blue,0.8);
+}
+
+h1,h2,h3,h4,h5{
+  font-weight: bold;
+  color:$title_text;
+  line-height: 1.2;
+}
+
+/* Helpers */
+.centered {
+  text-align: center;
+}
+
+.clear {
+  clear: both;
+  height: 1px;
+  visibility: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.faded {
+  color: rgba($body_text,0.7);
+}
+
+.row{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  gap: 30px;
+}
+
+.span8{
+  grid-column: 1/ span 8;
+}
+.span4{
+  grid-column: 9/ span 4;
+}
+
+/* Pagination */
+#pagination {
+  border: 0;
+  margin: 0 0 40px 0;
+  padding: 0;
+  li {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    list-style: none;
+    display: inline;
+    a {
+      margin-right: 2px;
+      display: block;
+      float: left;
+      padding: 3px 6px;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ff0084;
+    }
+  }
+  .previousOff,
+  .nextOff {
+    color: #666;
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding: 3px 4px;
+  }
+  .next a,
+  .previous a {
+    font-weight: bold;
+  }
+  .active {
+    color: #000;
+    font-weight: bold;
+    margin-right: 2px;
+    display: block;
+    float: left;
+    padding: 3px 6px;
+    text-decoration: none;
+  }
+}
+
+/* Alerts & Notices */
+
+#msg_notice {
+  margin: 0;
+  padding: 5px 10px 5px 36px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #0a0;
+  background: url("../images/icons/ok.png") 10px 50% no-repeat #e0ffe0;
+}
+
+#msg_warning {
+  margin: 0;
+  padding: 5px 10px 5px 36px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #f26522;
+  background: url("../images/icons/alert.png") 10px 50% no-repeat #ffffdd;
+}
+
+#msg_error {
+  margin: 0;
+  padding: 5px 10px 5px 36px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #a00;
+  background: url("../images/icons/error.png") 10px 50% no-repeat #fff0f0;
+}
+
+.warning {
+  background: #ffc;
+  font-style: italic;
+  strong {
+    text-transform: uppercase;
+    color: #a00;
+    font-style: normal;
+  }
+}
+
+.error {
+  color: #f00;
+  input {
+    border: 1px solid #f00;
+  }
+}
+
+.button,
+.button:visited {
+  @include rounded_shadow;
+  padding:15px 15px;
+  color:#fff;
+  text-align: center;
+  font-weight: bold;
+  border:none;
+  font-size: 100%;
+  cursor: pointer;
+  background-color: rgba($primary,1);
+  max-width: 240px;
+}
+
+.button:hover {
+  background-color: rgba($primary,0.8);
+}
+.button:active {
+  top: 1px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.green.button,
+.green.button:visited {
+  background-color: rgba($green,1);
+}
+.green.button:hover {
+  background-color: rgba($green,0.8);
+}
+.blue.button,
+.blue.button:visited {
+  background-color: rgba($blue,1);
+}
+.blue.button:hover {
+  background-color: rgba($blue,0.8);
+}
+
+.red.button,
+.red.button:visited {
+  background-color: rgba($red,1);
+}
+.red.button:hover {
+  background-color: rgba($red,0.8);
+}
+
+
+.yellow.button,
+.yellow.button:visited {
+  background-color: rgba($yellow,1);
+}
+.yellow.button:hover {
+  background-color: rgba($yellow,0.8);
+}
+
+@media only screen and (max-width: 760px) {
+  .row{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
